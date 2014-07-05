@@ -2478,7 +2478,7 @@ var esBot = {
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                        API.sendChat('/me Why meh? Please only meh songs if you believe that they are absolutely horrible!'); 
+                                    	API.sendChat('/me Why meh? Please only meh songs if you believe that they are absolutely horrible!'); 
                                 };                              
                         },
                 },
