@@ -2500,7 +2500,7 @@ var esBot = {
                         },
                 },
 		
-		 whymehCommand: {
+		whymehCommand: {
                         rank: 'user',
                         type: 'exact',
                         functionality: function(chat, cmd){
