@@ -25,7 +25,7 @@ var kill = function(){
     clearInterval(esBot.room.autodisableInterval);
     clearInterval(esBot.room.afkInterval);
     esBot.status = false;
-    console.log("Bot was killed.");
+    console.log("ZubaBot has died.");
 }
 
 var storeToStorage = function(){
@@ -89,7 +89,7 @@ var retrieveFromStorage = function(){
 };
 
 var esBot = {
-        version: "0.6",        
+        version: "0.7",        
         status: false,
         name: "ZubaBot",
         creator: "EuclideanSpace modified by iZuba",
@@ -800,6 +800,7 @@ var esBot = {
                     case '!cycle':              esBot.commands.cycleCommand.functionality(chat, '!cycle');                          executed = true; break;
                     case '!cycleguard':         esBot.commands.cycleguardCommand.functionality(chat, '!cycleguard');                executed = true; break;
                     case '!cycletimer':         esBot.commands.cycletimerCommand.functionality(chat, '!cycletimer');                executed = true; break;
+                    case '!maker':              esBot.commands.makerCommand.functionality(chat, '!maker');
                     case '!dclookup':           esBot.commands.dclookupCommand.functionality(chat, '!dclookup');                    executed = true; break;
                     case '!dc':                 esBot.commands.dclookupCommand.functionality(chat, '!dc');                          executed = true; break;
                     case '!emoji':              esBot.commands.emojiCommand.functionality(chat, '!emoji');                          executed = true; break;
@@ -1344,7 +1345,8 @@ var esBot = {
                                    'gives you a rainbow cookie made with love :heart:',
                                    'gives you an old cookie that was left out in the rain, it\'s moldy.',
                                    'bakes you fresh cookies, it smells amazing.',
-                                   'gives you a mystical Zuba cookie. It\'s quite rare, good job!'
+                                   'gives you a mystical Zuba cookie. It\'s quite rare, good job!',
+                                   'gives you a fortune cookie. It reads "3sweg5u"'
                             ],
 
                         getCookie: function() {
@@ -1428,6 +1430,18 @@ var esBot = {
                                     }
                                     else return API.sendChat('/me [@' + chat.from + '] No correct time specified for the cycleguard.');
                                 
+                                };                              
+                        },
+                },
+                
+                makerCommand: {
+                        rank: 'user',
+                        type: 'exact',
+                        functionality: function(chat, cmd){
+                                if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                                if( !esBot.commands.executable(this.rank, chat) ) return void (0);
+                                else{
+                                    API.sendChat('/me This bot\'s code was modified by Zuba greatly to make the ZubaBot. The base code (AKA basicBot) was created by EuclideanSpace.')
                                 };                              
                         },
                 },
