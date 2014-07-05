@@ -2529,5 +2529,5 @@ var esBot = {
                 
 };
 
-esBot.sesBot.startup(); 
+esBot.startup(); 
 }).call(this);
