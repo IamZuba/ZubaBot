@@ -1339,7 +1339,7 @@ var esBot = {
                                    'gives you a rainbow cookie made with love :heart:',
                                    'gives you an old cookie that was left out in the rain, it\'s moldy.',
                                    'bakes you fresh cookies, it smells amazing.',
-                                   'gives you a mystical Zuba cookie. It\'s quite rare, good job!
+                                   'gives you a mystical Zuba cookie. It\'s quite rare, good job!'
                             ],
 
                         getCookie: function() {
