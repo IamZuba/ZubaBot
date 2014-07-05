@@ -843,7 +843,7 @@ var esBot = {
                     case '!voteratio':          esBot.commands.voteratioCommand.functionality(chat, '!voteratio');                  executed = true; break;
                     case '!welcome':            esBot.commands.welcomeCommand.functionality(chat, '!welcome');                      executed = true; break;
                     case '!website':            esBot.commands.websiteCommand.functionality(chat, '!website');                      executed = true; break;
-		                case '!whymeh':		          esBot.commands.whymehCommand.functionality(chat, '!whymeh');			                  executed = true; break;
+                    case '!whymeh':		esBot.commands.whymehCommand.functionality(chat, '!whymeh');			    executed = true; break;
                     case '!youtube':            esBot.commands.youtubeCommand.functionality(chat, '!youtube');                      executed = true; break;
                     //case '!command': esBot.commands.commandCommand.functionality(chat, '!command'); executed = true; break;
                 }
@@ -877,7 +877,7 @@ var esBot = {
                 'gringo','fuder','foder','hua','ahue','modafuka','modafoka','mudafuka','mudafoka','ooooooooooooooo','foda'
             ],
             curses: [
-                'nigger', 'faggot', 'nigga', 'niqqa','motherfucker','modafocka'
+                'nigger', 'faggot', 'nigga', 'niqqa','motherfucker','modafocka','fagot','faggot','shit'
             ],                        
             beggarSentences: ['fanme','funme','becomemyfan','trocofa','fanforfan','fan4fan','fan4fan','hazcanfanz','fun4fun','fun4fun',
                 'meufa','fanz','isnowyourfan','reciprocate','fansme','givefan','fanplz','fanpls','plsfan','plzfan','becomefan','tradefan',
@@ -918,7 +918,7 @@ var esBot = {
                 'f4f','canihasfan','canihavefan','givetomeafan','givemyfan','phanme','but i need please fan',
                 'fanforafan','fanvsfan','fanturniturn','fanturninturn','sejammeufa',
                 'sejammeusfa','befanofme','faninfan','addtofan','fanthisaccount',
-                'fanmyaccount','fanback','addmeforfan','fans4fan','fans4fan','fanme','bemyfanpls','befanpls','f4f','fanyfan'
+                'fanmyaccount','fanback','addmeforfan','fans4fan','fans4fan','fanme','bemyfanpls','befanpls','f4f','fanyfan','fan'
             ],
         },
         connectAPI: function(){
@@ -1092,18 +1092,6 @@ var esBot = {
                                 };                              
                         },
                 },
-  
-		whymehCommand: {
-                        rank: 'user',
-                        type: 'exact',
-                        functionality: function(chat, cmd){
-                                if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                                if( !esBot.commands.executable(this.rank, chat) ) return void (0);
-                                else{
-                                        API.sendChat('/me Why meh? Please only meh songs if you believe that they are absolutely horrible!'); 
-                                };                              
-                        },
-                },
 
                 addCommand: {
                         rank: 'mod',
@@ -1233,7 +1221,7 @@ var esBot = {
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                    API.sendChat("/me We recommend PlugCubed for autowooting: http://plugcubed.net/")
+                                    API.sendChat("Get your own AutoWoot.")
                                 };                              
                         },
                 },
@@ -1309,7 +1297,7 @@ var esBot = {
                                                 API.moderateDeleteChat(currentchat[i].classList[j].substr(4));
                                         }
                                     }                                 
-                                return API.sendChat('/me [@' + chat.from + '] Cleared the chat.');
+                                return API.sendChat('/me [@' + chat.from + '] ZubaBot cleared the chat.');
                                 
                                 };                              
                         },
@@ -1351,6 +1339,7 @@ var esBot = {
                                    'gives you a rainbow cookie made with love :heart:',
                                    'gives you an old cookie that was left out in the rain, it\'s moldy.',
                                    'bakes you fresh cookies, it smells amazing.'
+                                   'gives you a mystical Zuba cookie. It\'s quite rare, good job!
                             ],
 
                         getCookie: function() {
@@ -1366,17 +1355,17 @@ var esBot = {
       
                                     var space = msg.indexOf(' ');
                                     if(space === -1){ 
-                                        API.sendChat('/em eats a cookie.');
+                                        API.sendChat('/em eats a cookie. awkward.');
                                         return false;
                                     }
                                     else{
                                         var name = msg.substring(space + 2);
                                         var user = esBot.userUtilities.lookupUserName(name);
                                         if (user === false || !user.inRoom) {
-                                          return API.sendChat("/em doesn't see '" + name + "' in room and eats a cookie himself.");
+                                          return API.sendChat("/em doesn't see '" + name + "' so he shares it with Zuba. JK.");
                                         } 
                                         else if(user.username === chat.from){
-                                            return API.sendChat("/me @" + name +  ", you're a bit greedy, aren't you? Giving cookies to yourself, bah. Share some with other people!")
+                                            return API.sendChat("/me @" + name +  ", you're a bit greedy, aren't you? Share some with Zuba.")
                                         }
                                         else {
                                             return API.sendChat("/me @" + user.username + ", @" + chat.from + ' ' + this.getCookie() );
@@ -1731,7 +1720,7 @@ var esBot = {
                                     var temp = esBot.roomSettings.lockdownEnabled;
                                     esBot.roomSettings.lockdownEnabled = !temp;
                                     if(esBot.roomSettings.lockdownEnabled){
-                                        return API.sendChat("/me [@" + chat.from + "] Lockdown enabled. Only staff can chat now.");
+                                        return API.sendChat("/me [@" + chat.from + "] Only staff can chat. Zuba might be mad.");
                                     }
                                     else return API.sendChat('/me [@' + chat.from + '] Lockdown disabled.');
                                 
@@ -2122,7 +2111,7 @@ var esBot = {
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
                                     if(typeof esBot.roomSettings.rulesLink === "string")
-                                        return API.sendChat("/me Please find the room rules here: " + esBot.roomSettings.rulesLink);                                
+                                        return API.sendChat("/me Silly! You don't know the rules? Find them here: " + esBot.roomSettings.rulesLink);                                
                                 };                              
                         },
                 },
@@ -2166,7 +2155,7 @@ var esBot = {
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                    API.sendChat('/me This bot was made by ' + esBot.creator + '.');
+                                    API.sendChat('/me This bot was modified by Zuba, made by: ' + esBot.creator + '.');
                                 };                              
                         },
                 },
@@ -2507,7 +2496,7 @@ var esBot = {
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                    API.sendChat('/me Please only')
+                                    API.sendChat('/me Please only meh songs that you truely do not like, not because of the DJ. Thanks!')
                                 };                              
                         },
                 },
