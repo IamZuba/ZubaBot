@@ -843,7 +843,7 @@ var esBot = {
                     case '!voteratio':          esBot.commands.voteratioCommand.functionality(chat, '!voteratio');                  executed = true; break;
                     case '!welcome':            esBot.commands.welcomeCommand.functionality(chat, '!welcome');                      executed = true; break;
                     case '!website':            esBot.commands.websiteCommand.functionality(chat, '!website');                      executed = true; break;
-		                case '!whymeh':		          esBot.commands.whymehCommand.functionality(chat, '!whymeh');			                  executed = true; break;
+		    case '!whymeh':		esBot.commands.whymehCommand.functionality(chat, '!whymeh');			    executed = true; break;
                     case '!youtube':            esBot.commands.youtubeCommand.functionality(chat, '!youtube');                      executed = true; break;
                     //case '!command': esBot.commands.commandCommand.functionality(chat, '!command'); executed = true; break;
                 }
@@ -2500,17 +2500,17 @@ var esBot = {
                         },
                 },
 		
-		            whymehCommand: {
+		 whymehCommand: {
                         rank: 'user',
                         type: 'exact',
                         functionality: function(chat, cmd){
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                    API.sendChat('/me Only meh if songs are truely bad);
-				                        };
-	                      },
-	              },         
+                                    API.sendChat('/me Please only meh songs if you truely think they are bad, not because you feel like it or you don't like the DJ.')
+                                };                              
+                        },
+                },
 
                 youtubeCommand: {
                         rank: 'user',
@@ -2529,5 +2529,5 @@ var esBot = {
                 
 };
 
-esBot.startup(); 
+esBot.sesBot.startup(); 
 }).call(this);
