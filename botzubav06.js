@@ -13,6 +13,9 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/> .
+ * 
+ * This script was created by EuclideanSpace but was modified by iZuba.
+ * All credit for original unmodified script goes to EuclideanSpace.
  */
 
 
@@ -86,10 +89,10 @@ var retrieveFromStorage = function(){
 };
 
 var esBot = {
-        version: "1.1.5",        
+        version: "v0.6",        
         status: false,
-        name: "basicBot",
-        creator: "EuclideanSpace",
+        name: "ZubaBot",
+        creator: "EuclideanSpace modified by iZuba",
         loggedInID: null,
         scriptLink: "https://raw.githubusercontent.com/Yemasthui/basicBot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
