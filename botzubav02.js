@@ -1338,7 +1338,7 @@ var esBot = {
                                    'gives you an Oreo cookie with a glass of milk!',
                                    'gives you a rainbow cookie made with love :heart:',
                                    'gives you an old cookie that was left out in the rain, it\'s moldy.',
-                                   'bakes you fresh cookies, it smells amazing.'
+                                   'bakes you fresh cookies, it smells amazing.',
                                    'gives you a mystical Zuba cookie. It\'s quite rare, good job!
                             ],
 
