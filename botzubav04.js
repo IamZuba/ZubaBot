@@ -121,7 +121,7 @@ var esBot = {
             afkRankCheck: "ambassador",                
             motdEnabled: false,
             motdInterval: 5,
-            motd: "Temporary Message of the Day",                
+            motd: "Welcome to OmegaMode's DJ room.",                
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -806,6 +806,7 @@ var esBot = {
                     case '!filter':             esBot.commands.filterCommand.functionality(chat, '!filter');                        executed = true; break;
                     case '!join':               esBot.commands.joinCommand.functionality(chat, '!join');                            executed = true; break;
                     case '!jointime':           esBot.commands.jointimeCommand.functionality(chat, '!jointime');                    executed = true; break;
+                    case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');
                     case '!kick':               esBot.commands.kickCommand.functionality(chat, '!kick');                            executed = true; break;
                     case '!kill':               esBot.commands.killCommand.functionality(chat, '!kill');                            executed = true; break;
                     case '!leave':              esBot.commands.leaveCommand.functionality(chat, '!leave');                          executed = true; break;
@@ -1566,6 +1567,18 @@ var esBot = {
                                         esBot.room.roulette.participants.push(chat.fromID);
                                         API.sendChat("/me @" + chat.from + " joined the roulette! (!leave if you regret it.)");
                                     }
+                                };                              
+                        },
+                },
+                
+                helloCommand: {
+                        rank: 'user',
+                        type: 'exact',
+                        functionality: function(chat, cmd){
+                                if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                                if( !esBot.commands.executable(this.rank, chat) ) return void (0);
+                                else{
+                                        API.sendChat('/m Hello, I am ZubaBot. I was created by Zuba, using basicBot as a base.');
                                 };                              
                         },
                 },
