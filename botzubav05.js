@@ -1578,7 +1578,7 @@ var esBot = {
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                        API.sendChat('/m Hello, I am ZubaBot. I was created by Zuba, using basicBot as a base.');
+                                    API.sendChat('/me I am ZubaBot. I was created by iZuba using basicBot as a base.')
                                 };                              
                         },
                 },
