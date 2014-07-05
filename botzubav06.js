@@ -89,7 +89,7 @@ var retrieveFromStorage = function(){
 };
 
 var esBot = {
-        version: "v0.6",        
+        version: "0.6",        
         status: false,
         name: "ZubaBot",
         creator: "EuclideanSpace modified by iZuba",
