@@ -2141,8 +2141,7 @@ var esBot = {
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                    if(typeof esBot.roomSettings.rulesLink === "string")
-                                        return API.sendChat("/me Silly! You don't know the rules? Find them here: " + esBot.roomSettings.rulesLink);                                
+                                    API.sendChat('Find rules, allowed themes and OP/Banned songs here: http://goo.gl/knlFMW ')                                
                                 };                              
                         },
                 },
