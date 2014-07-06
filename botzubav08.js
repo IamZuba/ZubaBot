@@ -2134,7 +2134,7 @@ var esBot = {
                         },
                 },
 
-		whymehCommand: {
+	        rulesCommand: {
                         rank: 'user',
                         type: 'exact',
                         functionality: function(chat, cmd){
