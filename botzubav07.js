@@ -2134,14 +2134,14 @@ var esBot = {
                         },
                 },
 
-                rulesCommand: {
+		whymehCommand: {
                         rank: 'user',
                         type: 'exact',
                         functionality: function(chat, cmd){
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-                                    API.sendChat('Find rules, allowed themes and OP/Banned songs here: http://goo.gl/knlFMW ')                                
+                                    API.sendChat('/me Find rules, allowed themes and OP/Banned songs here: http://goo.gl/knlFMW')
                                 };                              
                         },
                 },
