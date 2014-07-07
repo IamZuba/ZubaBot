@@ -987,7 +987,7 @@ var esBot = {
         },
         startup: function(){
             var u = API.getUser();
-            if(u.permission < 1) return API.chatLog("Only bouncers and up can run a bot.");
+            if(u.permission < 0) return API.chatLog("Only bouncers and up can run a bot.");
             if(u.permission === 0) return API.chatLog("The bot can't move people when it's run as a bouncer.");
             if(navigator.userAgent.toLowerCase().indexOf("chrome")<0){
                 API.chatLog("Storing data across sessions isn't supported when not running the bot on Google Chrome.");
