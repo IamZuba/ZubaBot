@@ -808,7 +808,6 @@ var esBot = {
                     case '!eta':                esBot.commands.etaCommand.functionality(chat, '!eta');                              executed = true; break;
                     case '!fb':                 esBot.commands.fbCommand.functionality(chat, '!fb');                                executed = true; break;
                     case '!filter':             esBot.commands.filterCommand.functionality(chat, '!filter');                        executed = true; break;
-                    case '!gucci':		esBot.commands.gucciCommand.functionality(chat, '!gucci');			    executed = true; break;
                     case '!join':               esBot.commands.joinCommand.functionality(chat, '!join');                            executed = true; break;
                     case '!jointime':           esBot.commands.jointimeCommand.functionality(chat, '!jointime');                    executed = true; break;
                     case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');	
@@ -838,7 +837,7 @@ var esBot = {
                     case '!skip':               esBot.commands.skipCommand.functionality(chat, '!skip');                            executed = true; break;
                     case '!status':             esBot.commands.statusCommand.functionality(chat, '!status');                        executed = true; break;
                     case '!swap':               esBot.commands.swapCommand.functionality(chat, '!swap');                            executed = true; break;
-                    case '!source':		esBot.commands.sourceCommand.functionailty(chat, '!source');			    executed = true; break;
+                    case '!gucci':		esBot.commands.gucciCommand.functionailty(chat, '!gucci');			    executed = true; break;
                     case '!theme':              esBot.commands.themeCommand.functionality(chat, '!theme');                          executed = true; break;
                     case '!timeguard':          esBot.commands.timeguardCommand.functionality(chat, '!timeguard');                  executed = true; break;
                     case '!togglemotd':         esBot.commands.togglemotdCommand.functionality(chat, '!togglemotd');                executed = true; break;
