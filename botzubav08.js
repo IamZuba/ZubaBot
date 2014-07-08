@@ -89,7 +89,7 @@ var retrieveFromStorage = function(){
 };
 
 var esBot = {
-        version: "0.7",        
+        version: "0.8",        
         status: false,
         name: "ZubaBot",
         creator: "EuclideanSpace modified by iZuba",
@@ -808,6 +808,7 @@ var esBot = {
                     case '!eta':                esBot.commands.etaCommand.functionality(chat, '!eta');                              executed = true; break;
                     case '!fb':                 esBot.commands.fbCommand.functionality(chat, '!fb');                                executed = true; break;
                     case '!filter':             esBot.commands.filterCommand.functionality(chat, '!filter');                        executed = true; break;
+                    case '!gucci':		esBot.commands.gucciCommand.functionality(chat, '!gucci')			    executed = true; break;
                     case '!join':               esBot.commands.joinCommand.functionality(chat, '!join');                            executed = true; break;
                     case '!jointime':           esBot.commands.jointimeCommand.functionality(chat, '!jointime');                    executed = true; break;
                     case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');
@@ -1569,6 +1570,18 @@ var esBot = {
                                         return API.sendChat('/me [@' + chat.from + '] chatfilter enabled.');
                                     } 
                                 
+                                };                              
+                        },
+                },
+                
+                gucciCommand: {
+                        rank: 'user',
+                        type: 'exact',
+                        functionality: function(chat, cmd){
+                                if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                                if( !esBot.commands.executable(this.rank, chat) ) return void (0);
+                                else{
+                                    API.sendChat('/me Keep it real homie!')
                                 };                              
                         },
                 },
