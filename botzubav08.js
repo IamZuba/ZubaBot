@@ -808,10 +808,10 @@ var esBot = {
                     case '!eta':                esBot.commands.etaCommand.functionality(chat, '!eta');                              executed = true; break;
                     case '!fb':                 esBot.commands.fbCommand.functionality(chat, '!fb');                                executed = true; break;
                     case '!filter':             esBot.commands.filterCommand.functionality(chat, '!filter');                        executed = true; break;
-                    case '!gucci':		esBot.commands.gucciCommand.functionality(chat, '!gucci')			    executed = true; break;
+                    case '!gucci':		esBot.commands.gucciCommand.functionality(chat, '!gucci');			    executed = true; break;
                     case '!join':               esBot.commands.joinCommand.functionality(chat, '!join');                            executed = true; break;
                     case '!jointime':           esBot.commands.jointimeCommand.functionality(chat, '!jointime');                    executed = true; break;
-                    case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');
+                    case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');	
                     case '!kick':               esBot.commands.kickCommand.functionality(chat, '!kick');                            executed = true; break;
                     case '!kill':               esBot.commands.killCommand.functionality(chat, '!kill');                            executed = true; break;
                     case '!leave':              esBot.commands.leaveCommand.functionality(chat, '!leave');                          executed = true; break;
