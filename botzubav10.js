@@ -89,7 +89,7 @@ var retrieveFromStorage = function(){
 };
 
 var esBot = {
-        version: "0.9",        
+        version: "0.10",        
         status: false,
         name: "ZubaBot",
         creator: "EuclideanSpace modified by iZuba",
@@ -810,7 +810,8 @@ var esBot = {
                     case '!filter':             esBot.commands.filterCommand.functionality(chat, '!filter');                        executed = true; break;
                     case '!join':               esBot.commands.joinCommand.functionality(chat, '!join');                            executed = true; break;
                     case '!jointime':           esBot.commands.jointimeCommand.functionality(chat, '!jointime');                    executed = true; break;
-                    case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');	
+                    case '!hello':              esBot.commands.helloCommand.functionality(chat, '!hello');							
+                    case '!hug': 		esBot.commands.hugCommand.functionality(chat, '!hug');
                     case '!kick':               esBot.commands.kickCommand.functionality(chat, '!kick');                            executed = true; break;
                     case '!kill':               esBot.commands.killCommand.functionality(chat, '!kill');                            executed = true; break;
                     case '!leave':              esBot.commands.leaveCommand.functionality(chat, '!leave');                          executed = true; break;
@@ -1607,6 +1608,56 @@ var esBot = {
                                 if( !esBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
                                     API.sendChat('/me I am ZubaBot. I was created by iZuba using basicBot as a base.')
+                                };                              
+                        },
+                },
+                
+                hugCommand: {
+                        rank: 'user',
+                        type: 'startsWith',
+
+                        cookies: ['has given you a furry hug!',
+                                   'has given you a bear hug!',
+                                   'has given you a fistbump.',
+                                   'gives you a dancing hug.',
+                                   'gives you a highfive!',
+                                   'gives you a puppy hug.',
+                                   'gives you a mystical Zuba hug.',
+                                   'gives you a smiling hug.',
+                                   'gives you a normal, boring hug.',
+                                   'gives you no hug. Oh no!'
+                            ],
+
+                        getHug: function() {
+                            var c = Math.floor(Math.random() * this.hugs.length);
+                            return this.hugs[c];
+                        },
+
+                        functionality: function(chat, cmd){
+                                if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                                if( !esBot.commands.executable(this.rank, chat) ) return void (0);
+                                else{
+                                    var msg = chat.message;
+      
+                                    var space = msg.indexOf(' ');
+                                    if(space === -1){ 
+                                        API.sendChat('/em doesn\'t give anyone a hug );
+                                        return false;
+                                    }
+                                    else{
+                                        var name = msg.substring(space + 2);
+                                        var user = esBot.userUtilities.lookupUserName(name);
+                                        if (user === false || !user.inRoom) {
+                                          return API.sendChat("/em doesn't see '" + name + "' so gives Zuba a hug. JK.");
+                                        } 
+                                        else if(user.username === chat.from){
+                                            return API.sendChat("/me @" + name +  ", you really love yourself today, huh?")
+                                        }
+                                        else {
+                                            return API.sendChat("/me @" + user.username + ", @" + chat.from + ' ' + this.getHug() );
+                                        }
+                                    }
+                                
                                 };                              
                         },
                 },
