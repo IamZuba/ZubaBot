@@ -1641,7 +1641,7 @@ var esBot = {
       
                                     var space = msg.indexOf(' ');
                                     if(space === -1){ 
-                                        API.sendChat('/em doesn\'t give anyone a hug);
+                                        API.sendChat('/em doesn\'t give anyone a hug');
                                         return false;
                                     }
                                     else{
