@@ -1616,7 +1616,7 @@ var esBot = {
                         rank: 'user',
                         type: 'startsWith',
 
-                        cookies: ['has given you a furry hug!',
+                        hugs: ['has given you a furry hug!',
                                    'has given you a bear hug!',
                                    'has given you a fistbump.',
                                    'gives you a dancing hug.',
@@ -1641,7 +1641,7 @@ var esBot = {
       
                                     var space = msg.indexOf(' ');
                                     if(space === -1){ 
-                                        API.sendChat('/em doesn\'t give anyone a hug );
+                                        API.sendChat('/em doesn\'t give anyone a hug);
                                         return false;
                                     }
                                     else{
