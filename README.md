@@ -5,6 +5,6 @@ Hi! I just wanted to note here that I have noted many times before, I made ZubaB
 I took that composition, and modified it (added commands, took away some, changed things around) to make ZubaBot.
 
 BIG THANKS TO:
-Whoever made basicBot (for a base for my bot)
+Yemasthui (he made the basicBot (which is the base code for ZubaBot) so all credit goes to him)
 
 More to come as I change more things around with ZubaBot.
